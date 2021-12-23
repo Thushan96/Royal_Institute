@@ -1,15 +1,19 @@
 package lk.ijse.pos.hibernate.entity;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
+import java.util.Date;
 
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Entity
 public class Registration implements SuperEntity {
     @Id
     private String r_id;
     @Temporal(TemporalType.DATE)
-    private String date;
+    private Date date;
     private String fee;
 
     @ManyToOne(cascade=CascadeType.ALL)
@@ -23,7 +27,7 @@ public class Registration implements SuperEntity {
     public Registration() {
     }
 
-    public Registration(String r_id, String date, String fee, Student student, Course course) {
+    public Registration(String r_id, Date date, String fee, Student student, Course course) {
         this.setR_id(r_id);
         this.setDate(date);
         this.setFee(fee);
@@ -40,11 +44,11 @@ public class Registration implements SuperEntity {
         this.r_id = r_id;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

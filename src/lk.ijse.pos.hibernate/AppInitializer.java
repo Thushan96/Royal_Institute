@@ -9,7 +9,7 @@ public class AppInitializer {
 
     public static void main(String []args){
 
-        Session session= FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         transaction.commit();
         session.close();

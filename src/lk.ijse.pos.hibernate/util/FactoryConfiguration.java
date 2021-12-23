@@ -7,40 +7,32 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Properties;
 
 
 public class FactoryConfiguration {
 
+    private static SessionFactory sessionFactory = buildSessionFactory();
 
-    private static FactoryConfiguration factoryConfiguration;
-    private SessionFactory sessionFactory;
+    private static SessionFactory buildSessionFactory() {
+        StandardServiceRegistry standardServiceRegistry =
+                new StandardServiceRegistryBuilder().loadProperties("hibernate.properties").build();
 
-    private FactoryConfiguration() {
-
-        Properties properties=new Properties();
-        try {
-            properties.load(new FileInputStream("hibernate.properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Configuration configuration = new Configuration().addAnnotatedClass(Student.class);
-        sessionFactory = configuration.buildSessionFactory();
+        Metadata metadata = new MetadataSources(standardServiceRegistry)
+                .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Registration.class)
+                .addAnnotatedClass(Course.class)
+                .getMetadataBuilder().build();
+        return metadata.getSessionFactoryBuilder().build();
     }
 
-    public static FactoryConfiguration getInstance() {
-        return (factoryConfiguration == null) ? factoryConfiguration = new FactoryConfiguration()
-                : factoryConfiguration;
-    }
-    public Session getSession() {
-        return sessionFactory.openSession();
+    public static SessionFactory getSessionFactory(){
+        return sessionFactory;
     }
 
 }
