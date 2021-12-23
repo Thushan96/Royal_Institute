@@ -63,7 +63,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <Label layoutX="133.0" layoutY="134.0" text="Login " textFill="WHITE">
+                  <Label layoutX="125.0" layoutY="177.0" text="Login " textFill="WHITE">
                      <font>
                         <Font name="Cambria Bold" size="35.0" />
                      </font>
@@ -83,6 +83,11 @@
                      <cursor>
                         <Cursor fx:constant="CLOSED_HAND" />
                      </cursor>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="35.0" text="Sipsewna Institute" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria Bold" size="37.0" />
+                     </font>
                   </Label>
                </children>
             </Pane>
