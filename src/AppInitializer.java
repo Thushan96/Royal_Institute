@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import util.FactoryConfiguration;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -19,7 +20,14 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class AppInitializer extends Application {
+public class AppInitializer extends Application{
+
+//    public static void main(String[] args) {
+//        Session session = FactoryConfiguration.getSessionFactory().openSession();
+//        session.beginTransaction();
+//        session.getTransaction().commit();
+//        session.close();
+//    }
 
         @Override
     public void start(Stage primaryStage) throws Exception {

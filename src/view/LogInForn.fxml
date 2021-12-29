@@ -16,7 +16,7 @@
          <children>
             <Pane layoutX="509.0" layoutY="53.0" prefHeight="696.0" prefWidth="385.0" style="-fx-background-color: grey;">
                <children>
-                  <Pane layoutY="256.0" prefHeight="192.0" prefWidth="334.0" styleClass="login_left_pane" stylesheets="CSS/StyleSheet.css">
+                  <Pane layoutY="256.0" prefHeight="192.0" prefWidth="334.0" styleClass="login_left_pane" stylesheets="@CSS/StyleSheet.css">
                      <children>
                         <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="15.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                            <image>
