@@ -11,10 +11,9 @@ import java.util.Date;
 public class Registration implements SuperEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int r_id;
-    @Temporal(TemporalType.DATE)
-    private Date date;
-    private String fee;
+    private String r_id;
+    private String date;
+    private double fee;
 
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "student_Id" ,referencedColumnName = "s_id",nullable = false)
@@ -27,7 +26,7 @@ public class Registration implements SuperEntity {
     public Registration() {
     }
 
-    public Registration(String r_id, Date date, String fee, Student student, Course course) {
+    public Registration(String r_id, String date, double fee, Student student, Course course) {
         this.setR_id(r_id);
         this.setDate(date);
         this.setFee(fee);
@@ -44,19 +43,19 @@ public class Registration implements SuperEntity {
         this.r_id = r_id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public String getFee() {
+    public double getFee() {
         return fee;
     }
 
-    public void setFee(String fee) {
+    public void setFee(double fee) {
         this.fee = fee;
     }
 

@@ -16,7 +16,7 @@ public class Student implements SuperEntity {
     private String s_name;
     private String s_address;
     private String s_DOB;
-    private int s_contact_no;
+    private String s_contact_no;
     private String s_gender;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
@@ -25,9 +25,20 @@ public class Student implements SuperEntity {
     public Student() {
     }
 
+    public Student(String s_id, String s_name, String s_address, String s_DOB, String s_contact_no, String s_gender) {
+        this.s_id = s_id;
+        this.s_name = s_name;
+        this.s_address = s_address;
+        this.s_DOB = s_DOB;
+        this.s_contact_no = s_contact_no;
+        this.s_gender = s_gender;
+    }
+
     public Student(String s_id) {
         this.setS_id(s_id);
     }
+
+
 
 
     public String getS_id() {
@@ -62,11 +73,11 @@ public class Student implements SuperEntity {
         this.s_DOB = s_DOB;
     }
 
-    public int getS_contact_no() {
+    public String getS_contact_no() {
         return s_contact_no;
     }
 
-    public void setS_contact_no(int s_contact_no) {
+    public void setS_contact_no(String s_contact_no) {
         this.s_contact_no = s_contact_no;
     }
 

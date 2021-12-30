@@ -2,13 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16dd2099-8260-487d-966c-9d0b9053bcab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71662108-2d27-4937-ab03-55fa17bb1b8a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71662108-2d27-4937-ab03-55fa17bb1b8a/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71662108-2d27-4937-ab03-55fa17bb1b8a/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71662108-2d27-4937-ab03-55fa17bb1b8a/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71662108-2d27-4937-ab03-55fa17bb1b8a/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aea221f8-8d91-45c2-903b-e66f76bb41ec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/aea221f8-8d91-45c2-903b-e66f76bb41ec.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sipsewana/AppInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/entity/Registration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sipsewana/entity/Registration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/view/LogInForn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sipsewana/view/LogInForn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/AppInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/assets/image/hide_127px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/assets/image/login_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/assets/image/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/assets/image/logo0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/assets/image/male_user_127px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/assets/image/password_127px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/assets/image/program_127px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/assets/image/registration_127px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/assets/image/shutdown_127px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/assets/image/student_male_127px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/controller/CourseFormController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/controller/DashBoardFormController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/controller/LogInFormController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/controller/RegistrationFormController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/controller/StudentFormController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/CrudDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/Custom/CourseDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/Custom/Impl/CourseDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/Custom/Impl/RegistrationDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/Custom/Impl/StudentDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/Custom/ResgistrationDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/Custom/StudentDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/DAOFactory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/DAOFactory$DAOType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/DAOFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/QueryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/dao/SuperDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/entity/Course.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/entity/Registration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/entity/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/entity/SuperEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/hibernate.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/util/FactoryConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/view/CSS/StyleSheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/view/CourseForm.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/view/DashBoardForm.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/view/LogInForn.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/view/RegistrationForm.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/view/StudentForm.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/view/TM/CourseTM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/view/TM/RegistrationTM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sipsewana/view/TM/StudentTM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/BOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CourseFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CourseFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/LogInForn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/LogInForn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/CourseForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CourseForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +66,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -78,11 +126,23 @@
       <workItem from="1640755190542" duration="18847000" />
       <workItem from="1640783238961" duration="63000" />
       <workItem from="1640783336600" duration="8264000" />
+      <workItem from="1640838537232" duration="15827000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,5 +1,10 @@
 package business;
 
+
+import business.custom.Impl.StudentBOImpl;
+import business.custom.Impl.CourseBOImpl;
+import business.custom.Impl.RegistrationBOImpl;
+
 public class BOFactory {
     public enum BOType{
         COURSE,STUDENT,REGISTRATION,ADDREGISTRATION
@@ -22,7 +27,7 @@ public class BOFactory {
             case REGISTRATION:
                 return new RegistrationBOImpl();
             case ADDREGISTRATION:
-                return new AddRegistrationBOImpl();
+                //return new AddRegistrationBOImpl();
             default:
                 return null;
         }
