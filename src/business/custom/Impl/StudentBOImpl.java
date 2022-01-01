@@ -29,8 +29,8 @@ public class StudentBOImpl implements StudentBO {
                         studentDTO.getStudentId(),
                         studentDTO.getStudentName(),
                         studentDTO.getStudentAddress(),
-                        studentDTO.getStudentContact(),
                         studentDTO.getStudentDOB(),
+                        studentDTO.getStudentContact(),
                         studentDTO.getStudentGender()
                 )
         );

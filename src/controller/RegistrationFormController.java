@@ -185,8 +185,6 @@ public class RegistrationFormController {
         txtStName.clear();
         txtStAddress.clear();
         dpStDOB.getEditor().clear();
-        rbtnMale.setText(null);
-        rbtnFemale.setText(null);
         txtTotal.clear();
         txtStMobileNumber.clear();
         courseTMObservableList.clear();

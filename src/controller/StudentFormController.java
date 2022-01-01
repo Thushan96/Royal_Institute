@@ -14,14 +14,12 @@ import dto.StudentDTO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import view.TM.StudentTM;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class StudentFormController {
@@ -33,7 +31,6 @@ public class StudentFormController {
     public RadioButton rbtnFemale;
     public JFXTextField txtStMobile;
     public JFXButton btnUpdateStudent;
-    public JFXButton btnDeleteStudent;
     public TableView<StudentTM> tblStudent;
     public TableColumn<StudentTM,String> colRegNo;
     public TableColumn <StudentTM,String> colCourseName;
@@ -43,7 +40,7 @@ public class StudentFormController {
     public TableColumn <StudentTM,String> colStContact;
     public TableColumn <StudentTM,String>colStDOB;
     public TableColumn <StudentTM,String> colStGender;
-    public JFXButton btnRefreshTbl;
+
 
     CourseBO courseBO = (CourseBO) BOFactory.getBoFactory().getSuperBO(BOFactory.BOType.COURSE);
     StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getSuperBO(BOFactory.BOType.STUDENT);
@@ -63,6 +60,13 @@ public class StudentFormController {
         colStGender.setCellValueFactory(new PropertyValueFactory<>("stuGender"));
         tblStudent.setItems(studentTMObservableList);
         loadStudents();
+        genderToggleChange();
+    }
+
+    private void genderToggleChange(){
+        ToggleGroup tgGender = new ToggleGroup();
+        rbtnMale.setToggleGroup(tgGender);
+        rbtnFemale.setToggleGroup(tgGender);
     }
 
     private void loadStudents(){
@@ -89,41 +93,98 @@ public class StudentFormController {
         return studentTMss;
     }
 
+    private StudentDTO selectStudentDTO(){
+        StudentDTO selectStDTO = new StudentDTO();
+        selectStDTO.setStudentId(txtStId.getText());
+        selectStDTO.setStudentName(txtStName.getText());
+        selectStDTO.setStudentAddress(txtStAddress.getText());
+        selectStDTO.setStudentContact(txtStMobile.getText());
+        selectStDTO.setStudentDOB(String.valueOf(txtStDob.getValue()));
+        System.out.println(txtStDob.getValue());
 
+
+        if (rbtnMale.isSelected()){
+            selectStDTO.setStudentGender("Male");
+        }
+        if (rbtnFemale.isSelected()){
+            selectStDTO.setStudentGender("Female");
+        }
+        return selectStDTO;
+    }
 
     public void btnUpdateStudentOnAction(ActionEvent actionEvent) {
+        studentTMObservableList.clear();
+        try {
+            boolean b = studentBO.updateStudent(selectStudentDTO());
+
+            if (b){
+                StudentDTO s1=new StudentDTO();
+                s1.setStudentId(txtStId.getText());
+                StudentDTO studentDTO = studentBO.searchStudent(s1);
+                if (studentDTO!=null){
+
+                    List<RegistrationDTO> allRegistration = registrationBO.getAllRegistration(studentDTO.getStudentId());
+
+                    for (RegistrationDTO registrationDTO : allRegistration) {
+
+                        StudentTM studentTM = searchStudentTMs(registrationDTO, registrationDTO.getCourseDTO());
+                        studentTMObservableList.add(studentTM);
+                    }
+
+                }
+            }else{
+
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void btnDeleteStudentOnAction(ActionEvent actionEvent) {
-    }
 
-    public void btnRefreshTblOnAction(ActionEvent actionEvent) {
-    }
 
-    public void txtStIdOnAction(KeyEvent e) {
+
+    public void txtStIdOnAction(KeyEvent e)  {
         if(e.getCode().toString().equals("ENTER"))
         {
             try {
-                StudentDTO s1=new StudentDTO();
+                studentTMObservableList.clear();
+                txtStName.clear();
+                txtStAddress.clear();
+                txtStDob.getEditor().clear();
+                txtStMobile.clear();
+                StudentDTO s1 = new StudentDTO();
                 s1.setStudentId(txtStId.getText());
 
 
                 StudentDTO studentDTO = studentBO.searchStudent(s1);
-                if (studentDTO!=null){
-                    System.out.println(studentDTO.toString());
+
+                if (studentDTO != null) {
+                    txtStName.setText(studentDTO.getStudentName());
+                    txtStAddress.setText(studentDTO.getStudentAddress());
+                    txtStDob.setValue(LocalDate.parse(studentDTO.getStudentDOB()));
+                    txtStMobile.setText(studentDTO.getStudentContact());
+                    if (studentDTO.getStudentGender().equalsIgnoreCase("male")) {
+                        rbtnMale.fire();
+                    } else {
+                        rbtnFemale.fire();
+                    }
+
                     List<RegistrationDTO> allRegistration = registrationBO.getAllRegistration(studentDTO.getStudentId());
-                    System.out.println(allRegistration.toString());
+
                     for (RegistrationDTO registrationDTO : allRegistration) {
-                        System.out.println(registrationDTO.getCourseDTO().getCourseName());
+
+                        StudentTM studentTM = searchStudentTMs(registrationDTO, registrationDTO.getCourseDTO());
+                        studentTMObservableList.add(studentTM);
                     }
 
                 }
-            }catch (Exception exception){
+            }catch (Exception exception) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Student not exist");
                 alert.setHeaderText(null);
                 alert.setContentText("please enter valid Id and Try again !");
-                alert.showAndWait();
             }
         }
     }

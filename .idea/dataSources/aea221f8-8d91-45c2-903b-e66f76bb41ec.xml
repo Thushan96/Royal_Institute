@@ -993,5 +993,108 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
+    <table id="292" parent="283" name="course"/>
+    <table id="293" parent="283" name="registration"/>
+    <table id="294" parent="283" name="student"/>
+    <column id="295" parent="292" name="c_id">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="296" parent="292" name="c_name">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="297" parent="292" name="duration">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="298" parent="292" name="fee">
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <key id="299" parent="292" name="PRIMARY">
+      <ColNames>c_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="300" parent="293" name="r_rid">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="301" parent="293" name="date">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="302" parent="293" name="fee">
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="303" parent="293" name="course_Id">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="304" parent="293" name="student_Id">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="305" parent="293" name="FKnlup3kpy6m22s4h3i1rw9toio">
+      <ColNames>course_Id</ColNames>
+      <RefColNames>c_id</RefColNames>
+      <RefTableName>course</RefTableName>
+    </foreign-key>
+    <foreign-key id="306" parent="293" name="FK3jy9ogtc02sdp9yplijnjq7yd">
+      <ColNames>student_Id</ColNames>
+      <RefColNames>s_id</RefColNames>
+      <RefTableName>student</RefTableName>
+    </foreign-key>
+    <index id="307" parent="293" name="FKnlup3kpy6m22s4h3i1rw9toio">
+      <ColNames>course_Id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="308" parent="293" name="FK3jy9ogtc02sdp9yplijnjq7yd">
+      <ColNames>student_Id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="309" parent="293" name="PRIMARY">
+      <ColNames>r_rid</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="310" parent="294" name="s_id">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="311" parent="294" name="s_DOB">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="312" parent="294" name="s_address">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="313" parent="294" name="s_contact_no">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="314" parent="294" name="s_gender">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="315" parent="294" name="s_name">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <key id="316" parent="294" name="PRIMARY">
+      <ColNames>s_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

@@ -83,19 +83,6 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnDeleteStudent" buttonType="RAISED" layoutX="801.0" layoutY="301.0" onAction="#btnDeleteStudentOnAction" prefHeight="38.0" prefWidth="173.0" text="Delete Student">
-         <ripplerFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#0dff00" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </ripplerFill>
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </JFXButton>
       <TableView fx:id="tblStudent" layoutX="16.0" layoutY="439.0" prefHeight="265.0" prefWidth="1056.0">
          <columns>
             <TableColumn fx:id="colRegNo" prefWidth="94.0" text="Reg No" />
@@ -113,19 +100,6 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnRefreshTbl" buttonType="RAISED" layoutX="894.0" layoutY="386.0" onAction="#btnRefreshTblOnAction" prefHeight="38.0" prefWidth="173.0" text="Refresh">
-         <ripplerFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#0dff00" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </ripplerFill>
-         <font>
-            <Font name="Cambria" size="20.0" />
-         </font>
-      </JFXButton>
       <Label layoutX="472.0" layoutY="21.0" text="Sipsewana Institute">
          <font>
             <Font name="Cambria" size="20.0" />
