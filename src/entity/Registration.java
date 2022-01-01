@@ -10,7 +10,7 @@ import java.util.Date;
 @Entity
 public class Registration implements SuperEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "r_rid",nullable = false)
     private String r_id;
     private String date;
     private double fee;

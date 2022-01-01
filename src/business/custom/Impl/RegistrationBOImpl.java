@@ -96,6 +96,24 @@ public class RegistrationBOImpl implements RegistrationBO {
         return registrationDTOList;
     }
 
+    @Override
+    public List<RegistrationDTO> getAllRegistrationIds() throws Exception {
+        List<RegistrationDTO> registrationDTOList = new ArrayList<>();
+        List<Registration> registrationList = registrationDAO.getAll();
+        for (Registration registration : registrationList){
+            registrationDTOList.add(
+                    new RegistrationDTO(
+                            registration.getR_id(),
+                            registration.getDate(),
+                            registration.getFee(),
+                            getAllStud(registration.getStudent()),
+                            getAllCou(registration.getCourse())
+                    )
+            );
+        }
+        return registrationDTOList;
+    }
+
     private RegistrationDTO getRegisDTO(Registration registration){
         return new RegistrationDTO(
                 registration.getR_id(),

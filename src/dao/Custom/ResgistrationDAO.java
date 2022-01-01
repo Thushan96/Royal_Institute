@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface ResgistrationDAO extends CrudDAO<Registration,String> {
     List<Registration> getAllRegistration(String studentID)throws Exception;
+    String searchId();
 
 }

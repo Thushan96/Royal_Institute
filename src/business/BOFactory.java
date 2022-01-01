@@ -1,6 +1,7 @@
 package business;
 
 
+import business.custom.Impl.AddRegistrationBOImpl;
 import business.custom.Impl.StudentBOImpl;
 import business.custom.Impl.CourseBOImpl;
 import business.custom.Impl.RegistrationBOImpl;
@@ -14,6 +15,7 @@ public class BOFactory {
 
     private BOFactory(){
     }
+
     public static BOFactory getBoFactory(){
         return (boFactory !=null)
                 ? boFactory : (boFactory=new BOFactory());
@@ -27,7 +29,7 @@ public class BOFactory {
             case REGISTRATION:
                 return new RegistrationBOImpl();
             case ADDREGISTRATION:
-                //return new AddRegistrationBOImpl();
+                return new AddRegistrationBOImpl();
             default:
                 return null;
         }

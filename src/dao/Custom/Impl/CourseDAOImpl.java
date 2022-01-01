@@ -20,7 +20,7 @@ public class CourseDAOImpl implements CourseDAO {
 
     @Override
     public boolean save(Course entity) throws Exception {
-        Session session = sessionFactory.openSession();
+        Session session = FactoryConfiguration.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         Serializable save = session.save(entity);
         transaction.commit();

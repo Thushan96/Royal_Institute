@@ -1,6 +1,8 @@
 package dao;
 
-import dao.Custom.Impl.*;
+import dao.Custom.Impl.RegistrationDAOImpl;
+import dao.Custom.Impl.CourseDAOImpl;
+import dao.Custom.Impl.StudentDAOImpl;
 
 
 public class DAOFactory {

@@ -12,4 +12,5 @@ public interface RegistrationBO extends SuperBO {
     RegistrationDTO searchReg(RegistrationDTO registrationDTO)throws Exception;
     List<RegistrationDTO> getAllReg(RegistrationDTO registrationDTO)throws Exception;
     List<RegistrationDTO> getAllRegistration(String studentId)throws Exception;
+    List<RegistrationDTO> getAllRegistrationIds()throws Exception;
 }

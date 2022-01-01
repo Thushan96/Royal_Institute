@@ -1,6 +1,7 @@
 package dao.Custom.Impl;
 
 import dao.CrudDAO;
+import dao.Custom.StudentDAO;
 import entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,7 +10,7 @@ import util.FactoryConfiguration;
 import java.io.Serializable;
 import java.util.List;
 
-public class StudentDAOImpl implements CrudDAO<Student,String> {
+public class StudentDAOImpl implements StudentDAO {
     private SessionFactory sessionFactory;
 
     public StudentDAOImpl(){
@@ -62,6 +63,8 @@ public class StudentDAOImpl implements CrudDAO<Student,String> {
         }
         return null;
     }
+
+
 
     @Override
     public List<Student> getAll() throws Exception {

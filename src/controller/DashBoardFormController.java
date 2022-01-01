@@ -34,6 +34,7 @@ public class DashBoardFormController {
             AnchorPane load = FXMLLoader.load(this.getClass().getResource("/view/RegistrationForm.fxml"));
             dashboardAnchor.getChildren().addAll(load.getChildren());
         }catch (Exception e){
+            System.out.println(e);
         }
     }
 

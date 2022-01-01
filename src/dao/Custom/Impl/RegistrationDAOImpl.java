@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import util.FactoryConfiguration;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RegistrationDAOImpl implements ResgistrationDAO {
@@ -84,11 +85,31 @@ public class RegistrationDAOImpl implements ResgistrationDAO {
         try {
             Session session = sessionFactory.openSession();
             session.beginTransaction();
-            List<Registration> registrationList = session.createNativeQuery("SELECT * FROM registration WHERE course_c_id=?",Registration.class).setParameter(1,studentID).list();
+            List<Registration> registrationList = session.createNativeQuery("SELECT * FROM registration WHERE student_Id=?",Registration.class).setParameter(1,studentID).list();
             session.getTransaction().commit();
             return registrationList;
         }catch (Exception e){
         }
+        return null;
+    }
+
+    @Override
+    public String searchId() {
+//        String id=null;
+//        try {
+//            Session session = sessionFactory.openSession();
+//            session.beginTransaction();
+//            List<Registration> registrationList = session.createNativeQuery("SELECT * FROM registration ORDER BY r_id DESC LIMIT 1",Registration.class).list();
+//            session.getTransaction().commit();
+//            for (Registration registration : registrationList) {
+//                id=registration.getR_id();
+//                System.out.println(registration.getR_id());
+//            }
+//        }catch (Exception e){
+//            System.out.println(e);
+//        }
+//
+//        return id;
         return null;
     }
 
