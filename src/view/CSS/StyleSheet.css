@@ -27,3 +27,15 @@
 .login_circle_0{
     -fx-fill:#34ace0;
 }
+
+.headerColour{
+    -fx-text-fill: rgb(50, 94, 168);
+}
+.login_color{
+    -fx-text-fill: rgba(32, 80, 107, 0.72);
+}
+
+.background_img{
+    -fx-border-radius: 75%;
+}
+

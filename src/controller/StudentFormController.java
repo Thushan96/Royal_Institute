@@ -152,7 +152,7 @@ public class StudentFormController {
                 studentTMObservableList.clear();
                 txtStName.clear();
                 txtStAddress.clear();
-                txtStDob.getEditor().clear();
+                //txtStDob.getEditor().clear();
                 txtStMobile.clear();
                 StudentDTO s1 = new StudentDTO();
                 s1.setStudentId(txtStId.getText());
