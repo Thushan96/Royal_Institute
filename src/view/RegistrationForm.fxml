@@ -24,11 +24,6 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </JFXTextField>
-      <Label fx:id="lblStID" layoutX="396.0" layoutY="95.0" text="ST001">
-         <font>
-            <Font name="Cambria Bold" size="20.0" />
-         </font>
-      </Label>
       <Label layoutX="480.0" layoutY="46.0" text="Registration">
          <font>
             <Font name="Cambria Bold" size="27.0" />
@@ -153,5 +148,10 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
+      <JFXTextField fx:id="lblStID" focusColor="WHITE" layoutX="365.0" layoutY="88.0" onKeyPressed="#txtIDonAction" prefHeight="31.0" prefWidth="102.0" unFocusColor="BLACK">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </JFXTextField>
    </children>
 </AnchorPane>

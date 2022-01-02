@@ -19,6 +19,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import view.TM.CourseTM;
 
 import java.time.LocalDate;
@@ -28,7 +29,6 @@ import java.util.List;
 
 public class RegistrationFormController {
     public JFXTextField txtStName;
-    public Label lblStID;
     public RadioButton rbtnMale;
     public RadioButton rbtnFemale;
     public JFXDatePicker dpDate;
@@ -49,6 +49,7 @@ public class RegistrationFormController {
     public JFXTextField txtTotal;
     public JFXButton btnReg;
     public Label lblRegID;
+    public JFXTextField lblStID;
 
     CourseBO courseBO = (CourseBO) BOFactory.getBoFactory().getSuperBO(BOFactory.BOType.COURSE);
     AddRegistrationBO addRegistrationBO = (AddRegistrationBO) BOFactory.getBoFactory().getSuperBO(BOFactory.BOType.ADDREGISTRATION);
@@ -318,4 +319,38 @@ public class RegistrationFormController {
 
     }
 
+
+    public void txtIDonAction(KeyEvent keyEvent) {
+        if(keyEvent.getCode().toString().equals("ENTER"))
+        {
+            StudentDTO s1 = new StudentDTO();
+            s1.setStudentId(lblStID.getText());
+
+            try {
+                StudentDTO studentDTO = studentBO.searchStudent(s1);
+
+                if (studentDTO != null) {
+                    txtStName.setText(studentDTO.getStudentName());
+                    txtStAddress.setText(studentDTO.getStudentAddress());
+                    dpStDOB.setValue(LocalDate.parse(studentDTO.getStudentDOB()));
+                    txtStMobileNumber.setText(studentDTO.getStudentContact());
+                    if (studentDTO.getStudentGender().equalsIgnoreCase("male")) {
+                        rbtnMale.fire();
+                    } else {
+                        rbtnFemale.fire();
+                    }
+                }
+
+
+            } catch (Exception e) {
+                setRegIdNStudentId();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Student not exist");
+                alert.setHeaderText(null);
+                alert.setContentText("Student does not exist register first !");
+                alert.showAndWait();
+
+            }
+        }
+    }
 }

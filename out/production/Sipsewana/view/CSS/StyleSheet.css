@@ -36,6 +36,6 @@
 }
 
 .background_img{
-    -fx-background-image:  url(/assets/image/sipsewana_img.jpg);
+    -fx-border-radius: 75%;
 }
 

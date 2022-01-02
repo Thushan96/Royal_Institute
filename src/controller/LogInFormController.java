@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -35,5 +36,20 @@ public class LogInFormController {
     }
 
     public void btnPwViewOnAction(ActionEvent actionEvent) {
+    }
+
+    public void imgEnterOnAction(MouseEvent mouseEvent) {
+        try {
+            Stage exit_stage = (Stage) btnEnter.getScene().getWindow();
+            exit_stage.close();
+            URL resource = this.getClass().getResource("/view/DashBoardForm.fxml");
+            Parent load = FXMLLoader.load(resource);
+            Scene scene = new Scene(load);
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e){
+        }
     }
 }
